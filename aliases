@@ -1,0 +1,36 @@
+#!/bin/bash
+alias reload_aliases="source ~/.aliases"
+alias aliases="vim ~/.aliases && reload_aliases"
+alias show_aliases="less ~/.aliases"
+
+alias ls='ls --color'
+
+alias rs='rails server'
+alias rg='rails generate'
+alias rag='rake generate'
+alias gs="git status"
+alias gca="git commit --amend"
+alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
+
+alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
+
+alias emacs='emacs -nw'
+alias gvim='gvim -p --remote-tab-silent'
+
+alias ls='ls -h'
+alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
+alias kbrd="setxkbmap -model pc104 -layout us,bg -variant ,phonetic && setxkbmap -option grp:alt_caps_toggle"
+alias lock="xscreensaver-command --lock"
+
+#Tmux
+#alias ta='tmux attach -t'
+#alias tls='tmux list-sessions'
+#alias tns='tmux new -s'
+
+
+#alias archie="cd ~/vms/archie && vagrant up && vagrant ssh"
+#alias ssh='ssh-add -l || ssh-add ~/.ssh/vile_rsa && ssh'
+#alias ssh='ssh-ident'
+tssh (){ ssh -t "$1" 'tmux attach -t ``|| tmux new || screen -DR'; }
+#alias vimpr="$(tabbed -d >/tmp/tabbed.xid); vimprobable2 -e $(</tmp/tabbed.xid)"
