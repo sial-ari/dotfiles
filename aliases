@@ -29,8 +29,6 @@ alias lock="xscreensaver-command --lock"
 #alias tns='tmux new -s'
 
 
-#alias archie="cd ~/vms/archie && vagrant up && vagrant ssh"
 #alias ssh='ssh-add -l || ssh-add ~/.ssh/vile_rsa && ssh'
 #alias ssh='ssh-ident'
 tssh (){ ssh -t "$1" 'tmux attach -t ``|| tmux new || screen -DR'; }
-#alias vimpr="$(tabbed -d >/tmp/tabbed.xid); vimprobable2 -e $(</tmp/tabbed.xid)"
