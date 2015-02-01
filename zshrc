@@ -1,4 +1,5 @@
 source ~/.dotfiles/antigen.zsh
+source ~/.dotfiles/aliases
 
 antigen use oh-my-zsh
 antigen bundle robbyrussell/oh-my-zsh lib/
@@ -14,5 +15,5 @@ antigen bundle autojump
 antigen bundle ssh-agent
 
 antigen theme maran
-export PATH="/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:$PATH"
+export PATH="/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:/home/sial/.bin/:$PATH"
 eval "$(rbenv init -)"

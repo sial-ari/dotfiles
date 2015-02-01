@@ -3,7 +3,8 @@ alias reload_aliases="source ~/.aliases"
 alias aliases="vim ~/.aliases && reload_aliases"
 alias show_aliases="less ~/.aliases"
 
-alias ls='ls --color'
+unalias ls
+alias ls='ls --color=auto'
 
 alias rs='rails server'
 alias rg='rails generate'
@@ -23,12 +24,5 @@ alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
 alias kbrd="setxkbmap -model pc104 -layout us,bg -variant ,phonetic && setxkbmap -option grp:alt_caps_toggle"
 alias lock="xscreensaver-command --lock"
 
-#Tmux
-#alias ta='tmux attach -t'
-#alias tls='tmux list-sessions'
-#alias tns='tmux new -s'
-
-
-#alias ssh='ssh-add -l || ssh-add ~/.ssh/vile_rsa && ssh'
 #alias ssh='ssh-ident'
 tssh (){ ssh -t "$1" 'tmux attach -t ``|| tmux new || screen -DR'; }
