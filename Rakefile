@@ -28,6 +28,7 @@ task :install do
 end
 
 def home() ENV['HOME'] end
+
 def home_slash(name) File.join(home, name) end
 
 def link_file(source, target)

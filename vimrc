@@ -30,6 +30,7 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
+Bundle 'wikitopian/hardmode'
 "For scheme
 Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'kikijump/tslime.vim'
