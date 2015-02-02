@@ -1,28 +1,36 @@
 #!/bin/bash
+
+#dotfile management
+alias aliases="vim ~/.aliases && reload_aliases"
 alias reload_zshrc="source ~/.zshrc"
 alias reload_aliases="source ~/.aliases"
-alias aliases="vim ~/.aliases && reload_aliases"
 alias show_aliases="less ~/.aliases"
 alias zshrc='vim ~/.zshrc && reload_zshrc'
 
-unalias ls
-alias ls='ls --color=auto'
 
-alias rs='rails server'
-alias rg='rails generate'
-alias rag='rake generate'
-alias gs="git status"
-alias gca="git commit --amend"
-alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+#various
+if [[ $platform == 'macosx' ]]; then
+	alias ls='ls -h'
+    alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
+    alias o="open ."
+    alias gvim="mvim --remote-silent"
+fi
 
-
-alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
-
+if [[ $platform == 'linux' ]]; then
+	alias ls='ls --color=auto'
+fi
+#emacs
 alias emacs='emacs -nw'
+
+#vim in linux
 alias gvim='gvim -p --remote-tab-silent'
 
-alias ls='ls -h'
-alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
+#scheme
+alias racket='racket -il readline'
+
+#common lisp
+alias sbcl='rlwrap sbcl'
+
 alias kbrd="setxkbmap -model pc104 -layout us,bg -variant ,phonetic && setxkbmap -option grp:alt_caps_toggle"
 alias lock="xscreensaver-command --lock"
 
