@@ -1,7 +1,9 @@
 #!/bin/bash
+alias reload_zshrc="source ~/.zshrc"
 alias reload_aliases="source ~/.aliases"
 alias aliases="vim ~/.aliases && reload_aliases"
 alias show_aliases="less ~/.aliases"
+alias zshrc='vim ~/.zshrc && reload_zshrc'
 
 unalias ls
 alias ls='ls --color=auto'
