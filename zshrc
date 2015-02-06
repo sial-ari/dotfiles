@@ -45,5 +45,5 @@ else
 fi
 antigen apply
 
-export PATH="/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:/home/sial/.bin/:$PATH"
+export PATH="$PATH:/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:/home/sial/.bin/"
 eval "$(rbenv init -)"
