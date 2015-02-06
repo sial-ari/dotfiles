@@ -14,13 +14,13 @@ if [[ $platform == 'macosx' ]]; then
     alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
     alias o="open ."
     alias gvim="mvim --remote-silent"
+	alias emacs="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
 fi
 
 if [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
+    alias emacs='emacs -nw'
 fi
-#emacs
-alias emacs='emacs -nw'
 
 #vim in linux
 alias gvim='gvim -p --remote-tab-silent'
