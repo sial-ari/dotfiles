@@ -7,14 +7,12 @@ desc "Install into the users home"
 task :install do
   Dir['*'].each do |file|
     case file
-      when 'Rakefile', 'README'
+      when 'Rakefile', 'README.md'
         next
       when 'Xresources'
         link_file file, home_slash(".#{file}") if `uname -s`.include? 'Linux'
-      #when 'TODO'
-      #  link_file 'TODO', home_slash('.toolsmithing')
       when 'bin'
-        unless File.directory? home_slash('bin')
+        unless File.directory? home_slash('.bin')
           mkdir home_slash('.bin'), :verbose => false
         end
 

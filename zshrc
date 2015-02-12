@@ -35,12 +35,16 @@ antigen bundle docker
 antigen bundle vagrant
 antigen bundle autojump
 antigen bundle ssh-agent
-antigen-bundle z 
+antigen bundle z 
 
 #antigen theme maran
-antigen theme candy
 
+if [[ `hostname` == venabili.local ]]; then
+    source ~/.bin/robbyrussell.zsh-theme	
+else
+	antigen theme candy
+fi
 antigen apply
 
-export PATH="/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:/home/sial/.bin/:$PATH"
+export PATH="$PATH:/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:/home/sial/.bin/"
 eval "$(rbenv init -)"
