@@ -1,0 +1,2 @@
+xmodmap ~/.Xmodmap
+xcape -e '0x1234=Return'
