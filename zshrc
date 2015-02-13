@@ -43,7 +43,8 @@ if [[ `hostname` == venabili.local ]]; then
 else
 	antigen theme candy
 fi
+
 antigen apply
 
-export PATH="$PATH:/opt/skype/:/usr/local/packer:$HOME/.rbenv/bin:/home/sial/.bin/"
+export PATH="$PATH:/opt/skype/:/usr/local/packer:/usr/local/sbin/:$HOME/.rbenv/bin:/home/sial/.bin/"
 eval "$(rbenv init -)"
