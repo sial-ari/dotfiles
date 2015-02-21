@@ -9,7 +9,7 @@ task :install do
     case file
       when 'Rakefile', 'README.md'
         next
-      when 'Xresources'
+      when 'Xresources', 'Xmodmap', 'xprofile'
         link_file file, home_slash(".#{file}") if `uname -s`.include? 'Linux'
       when 'bin'
         unless File.directory? home_slash('.bin')
@@ -17,7 +17,7 @@ task :install do
         end
 
         Dir['bin/*'].each do |bin_file|
-          link_file bin_file, home_slash(bin_file)
+          link_file bin_file, home_slash(".#{bin_file}")
         end
       else
         link_file file, home_slash(".#{file}")
