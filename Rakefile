@@ -30,7 +30,7 @@ def home() ENV['HOME'] end
 def home_slash(name) File.join(home, name) end
 
 def link_file(source, target)
-  action = if File.symlink?(target)
+  action = if File.exist?(target)
     if $replace_all
       :overwrite
     else
