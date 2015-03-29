@@ -1,5 +1,7 @@
 set nocompatible
-filetype plugin on 
+filetype on
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 syntax on
 
 "Notes Settings
@@ -32,6 +34,7 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'wikitopian/hardmode'
+Bundle 'vim-ruby/vim-ruby'
 "For scheme
 Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'kikijump/tslime.vim'

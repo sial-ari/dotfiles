@@ -18,13 +18,13 @@ fi
 
 if [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
+	alias gvim='gvim -p --remote-tab-silent'
 fi
 
 #vim in linux
-alias gvim='gvim -p --remote-tab-silent'
 
 #emacs 
-alias emacsd='emacs --daemon'
+alias emacsd='emacs --daemon=server'
 alias emacsc='emacsclient -c'
 
 #scheme
