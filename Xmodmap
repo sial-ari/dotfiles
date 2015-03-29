@@ -3,10 +3,10 @@
 !
 remove lock = Caps_Lock
 remove Control = Control_L
-remove mod1 = Alt_R
+!remove mod1 = Alt_R
 keysym Caps_Lock = Control_L
 keycode 36 = 0x1234
 !add Lock = Caps_Lock
-add mod4 = Alt_R
+!add mod4 = Alt_R
 add Control = Control_L 0x1234
 keycode any = Return
