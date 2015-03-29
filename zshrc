@@ -39,7 +39,7 @@ antigen bundle z
 
 #antigen theme maran
 
-if [[ `hostname` == venabili.local ]]; then
+if [[ `hostname` =~ venabili* ]]; then
     source ~/.bin/robbyrussell.zsh-theme	
 else
 	antigen theme candy
