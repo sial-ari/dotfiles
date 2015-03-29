@@ -79,7 +79,7 @@ set ofu=syntaxcomplete#Complete
 set smartindent    			  " smart indent
 set autoindent 				  " indent at the same level of the previous line
 set smarttab                  " tab and backspace are smart
-"set expandtab  				  " Use spaces instead of tabs
+set expandtab  				  " Use spaces instead of tabs
 set showcmd   				  " Display commands in the bottom right corner as they are typed.
 set ttyfast  				  " Smoother redraws
 set autoread   				  " Set to auto read when a file is changed from the outside
