@@ -19,6 +19,23 @@ task :install do
         Dir['bin/*'].each do |bin_file|
           link_file bin_file, home_slash(".#{bin_file}")
         end
+      when 'quicksynergy'
+        unless File.directory? home_slash('.quicksynergy')
+            mkdir home_slash('.quicksynergy'), :verbose => false if `uname -s`.include? 'Linux'
+        end
+
+        Dir['quicksynergy/*'].each do |conf_file|
+          link_file conf_file, home_slash(".#{conf_file}") if `uname -s`.include? 'Linux'
+        end
+
+      when 'moc'
+        unless File.directory? home_slash('.moc')
+            mkdir home_slash('.moc'), :verbose => false if `uname -s`.include? 'Linux'
+        end
+
+        Dir['moc/*'].each do |conf_file|
+          link_file conf_file, home_slash(".#{conf_file}") if `uname -s`.include? 'Linux'
+        end
       else
         link_file file, home_slash(".#{file}")
     end
