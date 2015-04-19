@@ -35,6 +35,7 @@ antigen bundle docker
 antigen bundle vagrant
 antigen bundle autojump
 antigen bundle ssh-agent
+antigen bundle archlinux
 antigen bundle z 
 
 #antigen theme maran
