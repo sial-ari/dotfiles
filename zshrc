@@ -29,16 +29,19 @@ antigen bundle robbyrussell/oh-my-zsh lib/
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle git
 antigen bundle tmux
-antigen bundle yum
 antigen bundle pass
 antigen bundle docker
 antigen bundle vagrant
 antigen bundle autojump
 antigen bundle ssh-agent
-#antigen bundle archlinux
 antigen bundle z 
 
-#antigen theme maran
+if [[ -e /etc/redhat-release ]]; then
+    antigen bundle yum
+else
+    antigen archlinux
+fi
+
 
 if [[ `hostname` =~ venabili* ]]; then
     source ~/.bin/robbyrussell.zsh-theme	
