@@ -1,6 +1,9 @@
 #!/bin/bash
 
-#dotfile management
+#######################
+# dotfile management #
+#######################
+
 alias aliases="vim ~/.aliases && reload_aliases"
 alias reload_zshrc="source ~/.zshrc"
 alias reload_aliases="source ~/.aliases"
@@ -8,7 +11,9 @@ alias show_aliases="less ~/.aliases"
 alias zshrc='vim ~/.zshrc && reload_zshrc'
 
 
-#various
+###########
+# various #
+###########
 if [[ $platform == 'macosx' ]]; then
 	alias ls='ls -h'
     alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
@@ -21,16 +26,21 @@ if [[ $platform == 'linux' ]]; then
 	alias gvim='gvim -p --remote-tab-silent'
 fi
 
-#vim in linux
 
-#emacs 
+#########
+# emacs #
+#########
 alias emacsd='emacs --daemon=server'
 alias emacsc='emacsclient -c'
 
-#scheme
+##########
+# scheme #
+##########
 alias racket='racket -il readline'
 
-#common lisp
+###############
+# common lisp #
+###############
 alias sbcl='rlwrap sbcl'
 
 alias kbrd="setxkbmap -model pc104 -layout us,bg -variant ,phonetic && setxkbmap -option grp:alt_caps_toggle"
