@@ -39,7 +39,7 @@ antigen bundle z
 if [[ -e /etc/redhat-release ]]; then
     antigen bundle yum
 else
-    antigen archlinux
+    antigen bundle archlinux
 fi
 
 
