@@ -30,7 +30,7 @@ fi
 #########
 # emacs #
 #########
-alias vim='emacsclient -t'
+#alias vim='emacsclient -t'
 alias gvim='emacsclient -c'
 alias emacsd='emacs --daemon=server'
 alias emacsc='emacsclient -c'
