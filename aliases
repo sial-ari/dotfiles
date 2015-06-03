@@ -32,9 +32,9 @@ fi
 #########
 alias vim='emacsclient -t'
 alias gvim='emacsclient -c'
-alias emacsd='emacs --daemon=server'
+alias emacsd='/usr/bin/emacs --daemon=server'
 alias emacsc='emacsclient -c'
-alias emacst='emacsclient -t'
+alias emacs='emacsclient -t'
 
 ##########
 # scheme #
