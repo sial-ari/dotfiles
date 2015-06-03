@@ -49,6 +49,15 @@ else
 	antigen theme candy
 fi
 
+tmux attach -t base
+
+if [[ -z $TMUX ]]
+then
+    tmux new-session -s base
+else
+    tmux attach -t base
+fi
+
 antigen apply
 
 export PATH="$PATH:/opt/skype/:/usr/local/packer:/usr/local/sbin/:$HOME/.rbenv/bin:/home/sial/.bin/"
