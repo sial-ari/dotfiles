@@ -1,7 +1,7 @@
-xmodmap ~/.Xmodmap
-xrandr --output LVDS1 --left-of VGA1
-/home/sial/.bin/xcape -e '0x1234=Return'
-xrdb ~/.Xresources
 xinput -disable 10
+xrdb ~/.Xresources
+xmodmap ~/.Xmodmap
+/home/sial/.bin/xcape -e '0x1234=Return'
 emacs --daemon=server
+#xautolock -time 2 -locker slock
 exec awesome

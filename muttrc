@@ -1,0 +1,35 @@
+macro index <f5> 'source ~/.mutt/tradeo.com'
+macro index <f6> 'source ~/.mutt/macrew.eu'
+ 
+account-hook tradeo.com 'set imap_user=vladimir@tradeo.com imap_pass=madnessartcrew5525'
+account-hook macrew.eu 'set imap_user=sial@macrew.eu imap_pass=255244233q'
+ 
+set move = no  #Prevents mutt from asking to move read messages to INBOX
+set imap_keepalive = 900
+ 
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc #Sorting emails by the given criteria (from left to right)
+ 
+ignore *
+unignore from: date subject to cc
+unignore x-mailing-list: posted-to:
+unignore x-mailer:
+ 
+#Nice looks
+set markers=no # removes the "+" sign from the beginning of wrapped lines
+set pager_index_lines= 5
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+ 
+#Set your editor
+set editor='vim + -c "set textwidth=80" -c "set wrap" -c "set nocp" -c "?^$"'
+ 
+# .mutt/muttrc
+folder-hook 'tradeo.com' 'source ~/.mutt/tradeo.com'
+folder-hook 'macrew.eu' 'source ~/.mutt/macrew.eu'
+ 
+# Choose which account should be loaded on startup, uncomment only one of these:
+source ~/.mutt/tradeo.com
+#source ~/.mutt/macrew.eu
