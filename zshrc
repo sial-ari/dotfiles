@@ -1,3 +1,12 @@
+## TODO
+#
+# 1. Tmux auto session
+#
+#
+#
+#
+#
+
 source ~/.dotfiles/antigen.zsh
 source ~/.dotfiles/aliases
 
@@ -49,14 +58,6 @@ else
 	antigen theme candy
 fi
 
-tmux attach -t base
-
-if [[ -z $TMUX ]]
-then
-    tmux new-session -s base
-else
-    tmux attach -t base
-fi
 
 antigen apply
 
