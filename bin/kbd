@@ -2,6 +2,6 @@
 setxkbmap
 pkill xcape
 setxkbmap -layout us,bg -variant ,phonetic
-setxkbmap -option grp:alt_shift_toggle
+setxkbmap -option grp:shifts_toggle 
 xmodmap ~/.dotfiles/Xmodmap_judith
-xcape -e '0x1234=Return'
+~/.bin/xcape -e '0x1234=Return'
