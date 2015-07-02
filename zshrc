@@ -43,6 +43,7 @@ antigen bundle docker
 antigen bundle vagrant
 antigen bundle autojump
 antigen bundle ssh-agent
+antigen bundle systemd
 antigen bundle z 
 
 if [[ -e /etc/redhat-release ]]; then
