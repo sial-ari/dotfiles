@@ -69,3 +69,4 @@ eval "$(rbenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+if which passpie > /dev/null; then eval "$(passpie complete zsh)"; fi
