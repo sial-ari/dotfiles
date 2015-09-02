@@ -4,6 +4,8 @@ xmodmap ~/.Xmodmap
 ~/.bin/xcape -e '0x1234=Return'
 xrdb ~/.Xresources
 /bin/emacs --daemon=server &
+unclutter &
+pnmixer &
 nm-applet &
 parcellite &
 redshift-gtk &

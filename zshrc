@@ -2,10 +2,6 @@
 #
 # 1. Tmux auto session
 #
-#
-#
-#
-#
 
 source ~/.dotfiles/antigen.zsh
 source ~/.dotfiles/aliases

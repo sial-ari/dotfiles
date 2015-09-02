@@ -48,7 +48,7 @@ alias sbcl='rlwrap sbcl'
 
 alias kbrd="setxkbmap -model pc104 -layout us,bg -variant ,phonetic && setxkbmap -option grp:shifts_toggle"
 alias lock="xscreensaver-command --lock"
-alias cat="ccat"
+alias cat="~/.bin/ccat"
 
 #alias ssh='ssh-ident'
 tssh (){ ssh -t "$1" 'tmux attach -t ``|| tmux new || screen -DR'; }
