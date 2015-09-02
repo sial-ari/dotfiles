@@ -14,25 +14,13 @@ alias zshrc='vim ~/.zshrc && reload_zshrc'
 ###########
 # various #
 ###########
-if [[ $platform == 'macosx' ]]; then
-	alias ls='ls -h'
-    alias ff_profiles='/Applications/Firefox.app/Contents/MacOS/firefox-bin -p'
-    alias o="open ."
-    alias gvim="mvim --remote-silent"
-fi
-
-if [[ $platform == 'linux' ]]; then
-	alias ls='ls --color=auto'
-	alias gvim='gvim -p --remote-tab-silent'
-fi
+alias ls='ls --color=auto'
+alias gvim='gvim -p --remote-tab-silent'
 
 
 #########
 # emacs #
 #########
-#alias vim='emacsclient -t'
-alias gvim='emacsclient -c'
-alias emacsd='/usr/bin/emacs --daemon=server'
 alias emacsc='emacsclient -c'
 alias emacs='emacsclient -t'
 
@@ -47,7 +35,7 @@ alias racket='racket -il readline'
 alias sbcl='rlwrap sbcl'
 
 alias kbrd="setxkbmap -model pc104 -layout us,bg -variant ,phonetic && setxkbmap -option grp:shifts_toggle"
-alias lock="xscreensaver-command --lock"
+alias lock="xautolock -locknow"
 alias cat="~/.bin/ccat"
 
 #alias ssh='ssh-ident'
