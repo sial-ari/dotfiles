@@ -3,8 +3,8 @@
 # 1. Tmux auto session
 #
 
-source ~/.dotfiles/antigen.zsh
-source ~/.dotfiles/aliases
+source ~/.antigen.zsh
+source ~/.aliases
 
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
@@ -42,27 +42,13 @@ antigen bundle ssh-agent
 antigen bundle systemd
 antigen bundle z 
 
-if [[ -e /etc/redhat-release ]]; then
-    antigen bundle yum
-else
-    antigen bundle archlinux
-fi
-
-
-if [[ `hostname` =~ venabili* ]]; then
-    source ~/.bin/robbyrussell.zsh-theme	
-else
-	antigen theme candy
-fi
-
+antigen bundle archlinux
 
 antigen apply
 
 export PATH="$PATH:/opt/skype/:/usr/local/packer:/usr/local/sbin/:$HOME/.rbenv/bin:/home/sial/.bin/"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 if which passpie > /dev/null; then eval "$(passpie complete zsh)"; fi
