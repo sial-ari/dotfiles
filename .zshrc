@@ -44,6 +44,8 @@ antigen bundle z
 
 antigen bundle archlinux
 
+antigen theme candy
+
 antigen apply
 
 export PATH="$PATH:/opt/skype/:/usr/local/packer:/usr/local/sbin/:$HOME/.rbenv/bin:/home/sial/.bin/"
