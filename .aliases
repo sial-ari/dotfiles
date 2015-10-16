@@ -14,6 +14,16 @@ alias zshrc='vim ~/.zshrc && reload_zshrc'
 ###########
 # various #
 ###########
+if [[ $platform == 'linux' ]]; then
+	alias ls='ls --color=auto'
+	alias gvim='gvim -p --remote-tab-silent'
+fi
+alias rst='reset'
+alias virsh='sudo virsh'
+alias up='upup'
+alias sl='ls'
+alias glc="glo |head -n1 |awk '{print $1}'"
+alias bwd="wget http://cachefly.cachefly.net/400mb.test -O /dev/null"
 alias ls='ls --color=auto'
 alias gvim='gvim -p --remote-tab-silent'
 
@@ -41,3 +51,4 @@ alias open="xdg-open"
 
 #alias ssh='~/.bin/ssh-ident'
 tssh (){ ssh -t "$1" 'tmux attach -t ``|| tmux new || screen -DR'; }
+upup(){ DEEP=$1; [ -z "${DEEP}" ] && { DEEP=1; }; for i in $(seq 1 ${DEEP}); do cd ../; done; }
