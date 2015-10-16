@@ -7,7 +7,8 @@ xrdb ~/.Xresources
 unclutter &
 pnmixer &
 nm-applet &
+nagstamon &
 parcellite &
-redshift-gtk &
+redshift &
 xautolock -time 2 -locker slock &
 exec awesome

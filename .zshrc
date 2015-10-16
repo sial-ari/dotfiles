@@ -38,7 +38,7 @@ antigen bundle pass
 antigen bundle docker
 antigen bundle vagrant
 antigen bundle autojump
-antigen bundle ssh-agent
+#antigen bundle ssh-agent #will use ssh-ident for the job
 antigen bundle systemd
 antigen bundle z 
 
@@ -48,7 +48,7 @@ antigen theme candy
 
 antigen apply
 
-export PATH="$PATH:/opt/skype/:/usr/local/packer:/usr/local/sbin/:$HOME/.rbenv/bin:/home/sial/.bin/"
+export PATH="/home/sial/.bin:/opt/packer:$PATH:/opt/skype/:/usr/local/sbin/:$HOME/.rbenv/bin:/"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"

@@ -4,10 +4,6 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 syntax on
 
-"Notes Settings
-:let g:notes_directories = ['~/.notes']
-:let g:notes_suffix = '.note'
-
 "Set search highlight
 :set hlsearch
 
@@ -25,7 +21,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tpope/vim-fugitive'
@@ -35,15 +30,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'wikitopian/hardmode'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'andrep/vimacs'
 "For scheme
 Bundle 'kien/rainbow_parentheses.vim'
-"Bundle 'kikijump/tslime.vim'
-
-"For VimOrganizer
-"Bundle 'tchyny/calendar.vim'
-"Bundle 'vim-scripts/utl.vim'
-"Bundle 'chrisbra/NrrwRgn'
-"Bundle 'hsitz/VimOrganizer'
 
 call vundle#end()
 
@@ -149,3 +138,4 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+let g:VM_Enabled = 1
