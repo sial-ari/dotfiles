@@ -6,6 +6,7 @@ xrdb ~/.Xresources
 /bin/emacs --daemon=server &
 unclutter &
 pnmixer &
+blueman &
 nm-applet &
 nagstamon &
 parcellite &

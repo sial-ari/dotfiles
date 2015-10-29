@@ -42,8 +42,6 @@ antigen bundle autojump
 antigen bundle systemd
 antigen bundle z 
 
-antigen bundle archlinux
-
 antigen theme candy
 
 antigen apply
