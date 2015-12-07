@@ -1,0 +1,21 @@
+- name: Install software
+  dnf: pkg={{ item }} state=installed
+  with_items:
+    - xsel
+    - awesome
+    - slock
+    - xautolock
+
+- name: Link awesome config
+  file
+
+- name: Link dotfiles
+  file: >-
+    src={{ item }}
+    dest=/home/{{ user }}/.{{ item | basename }}
+    mode=0600
+    state=link
+  with_fileglob:
+    - ./dot/*
+
+- include: fonts.yml

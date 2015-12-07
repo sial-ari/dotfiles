@@ -1,0 +1,9 @@
+- hosts: all
+  roles:
+    - shell
+    - desktop
+    - dev
+    - net
+    - media
+    - syncthing
+    - virt

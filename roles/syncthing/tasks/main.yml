@@ -1,0 +1,8 @@
+- name: Detect the installation
+  command: syncthing -version
+  ignore_errors: True
+  register: installed_syncthing_version
+
+- include: install.yml
+  when: (installed_syncthing_version|failed) or (installed_syncthing_version.stdout.find(syncthing_version) == -1)
+

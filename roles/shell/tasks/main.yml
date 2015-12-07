@@ -1,0 +1,27 @@
+- name: Install software
+  dnf: pkg={{ item }} state=present
+  with_items:
+    - zsh
+    - htop
+    - ncdu # ncurses du
+    - parallel
+    - the_silver_searcher # ag
+    - pandoc # markdown
+
+- name: change shell to zsh
+  user: name={{ user }} shell=/bin/zsh
+
+- name: Link dotfiles
+  file: >-
+    src={{ item }}
+    dest=/home/{{ user }}/.{{ item | basename }}
+    mode=0600
+    state=link
+  with_fileglob:
+    - ./*
+
+- name: Link dot-directories
+  file: src={{ role_path }}/files/{{ item }} dest=/home/{{ user }}/.{{ item }} state=link
+  with_items:
+    - bin
+    - zsh
