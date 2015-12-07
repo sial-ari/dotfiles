@@ -9,7 +9,7 @@
   notify: restart syncthing
 
 - name: Copy the systemd unit
-  copy: src='syncthing@.service' dest='/etc/systemd/system/syncthing@.service'
+  copy: src='syncthing.service' dest='/etc/systemd/system/syncthing.service'
   notify: restart syncthing
 
 - name: Enable the service
