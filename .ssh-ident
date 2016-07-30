@@ -3,10 +3,7 @@ MATCH_PATH = [
         (r"projects/tradeo", "tradeo"),
       ]
 MATCH_ARGV = [
-        (r"kenny", "personal"),
-        (r"nympha", "tradeo"),
-        (r"nymphadora_lan", "tradeo"),
-        (r"tweek",  "digitalocean"),
+        
       ]
 DEFAULT_IDENTITY = "personal"
 
