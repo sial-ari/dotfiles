@@ -41,14 +41,19 @@ antigen bundle autojump
 #antigen bundle ssh-agent #will use ssh-ident for the job
 antigen bundle systemd
 antigen bundle z 
+antigen bundle nojhan/liquidprompt
 
-antigen theme candy
+
+#antigen theme candy
 
 antigen apply
 
-export PATH="/home/sial/.bin:/opt/packer:$PATH:/opt/skype/:/usr/local/sbin/:$HOME/.rbenv/bin:/"
+export PATH="/home/sial/.bin:/opt/packer:$PATH:/opt/skype/:/usr/local/sbin/:$HOME/.rbenv/bin:$HOME/projects/go/bin/"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 if which passpie > /dev/null; then eval "$(passpie complete zsh)"; fi
+command -v dtags > /dev/null 2>&1 && . <(dtags shell zsh)
+source ~/perl5/perlbrew/etc/bashrc
+source ~/.nix-profile/etc/profile.d/nix.sh
