@@ -48,7 +48,7 @@ antigen bundle nojhan/liquidprompt
 
 antigen apply
 
-export PATH="/home/sial/.bin:/opt/packer:$PATH:/opt/skype/:/usr/local/sbin/:$HOME/.rbenv/bin:$HOME/projects/go/bin/"
+export PATH="/home/sial/.bin:/opt/packer:$PATH:/opt/skype/:/usr/local/sbin/:/usr/local/sbin/:$HOME/.rbenv/bin:$HOME/projects/go/bin/"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"

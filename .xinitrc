@@ -8,7 +8,7 @@ unclutter &
 pnmixer &
 blueman &
 nm-applet &
-nagstamon &
+#nagstamon &
 parcellite &
 redshift &
 xautolock -time 2 -locker slock &
