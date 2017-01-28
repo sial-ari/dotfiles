@@ -6,10 +6,12 @@ xrdb ~/.Xresources
 /bin/emacs --daemon=server &
 unclutter &
 pnmixer &
-blueman &
+#blueman &
 nm-applet &
-#nagstamon &
 parcellite &
 redshift &
-xautolock -time 2 -locker slock &
+~/.bin/telegram &
+slack &
+#xautolock -time 2 -locker slock &
+xscreensaver &
 exec awesome

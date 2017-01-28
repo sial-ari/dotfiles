@@ -10,9 +10,12 @@ function update {
 
   # link files into $HOME
   for file in .*; do
-    if [[ $file != "." && $file != ".." && $file != ".gitmodules" && $file != ".git" ]]; then
-      echo $file
+    if [[ $file != "." && $file != ".." && $file != ".gitmodules" && $file != "awesome" && $file != ".git" ]]; then
+      echo "$file"
       ln -s "$(pwd)/$file" "$HOME/$file"
+    elif [[ $file == 'awesome' ]];then
+        echo "$file"
+        ln -s "$(pwd)/$file" "$HOME/.config/$file"
     fi
   done
   

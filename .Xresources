@@ -4,10 +4,26 @@ URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
 !!URxvt*font: xft:inconsolata:size=15:antialias=true
 ! Fonts
-URxvt*font: xft:DejaVu Sans Mono:antialias=true:pixelsize=11,xft:DejaVu Sans Mono for Powerline:antialias=true:pixelsize=11
+URxvt*font: xft:DejaVu Sans Mono:antialias=true:pixelsize=12,xft:DejaVu Sans Mono for Powerline:antialias=true:pixelsize=11
 URxvt*boldFont: xft:DejaVu Sans Mono:style=bold:antialias=true:pixelsize=11,xft:DejaVu Sans Mono for Powerline:style=bold:antialias=true:pixelsize=11
 URxvt*italicFont: xft:DejaVu Sans Mono:style=italic:antialias=true:pixelsize=11,xft:DejaVu Sans Mono for Powerline:style=italic:antialias=true:pixelsize=11
 URxvt*boldItalicFont: xft:DejaVu Sans Mono:style=bolditalic:antialias=true:pixelsize=11,xft:DejaVu Sans Mono for Powerline:style=bolditalic:antialias=true:pixelsize=11
+
+
+URxvt*termName: rxvt-unicode
+
+!fonts
+
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.lcdfilter:  lcddefault
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+
+URxvt.letterSpace:      0
 
 ! Native transparency
 URxvt*.transparent: true
@@ -23,9 +39,9 @@ URxvt*scrollBar: false
 URxvt*loginShell: true
 Urxvt*secondaryScroll: true # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
-URxvt*termName: rxvt-unicode
+!URxvt*termName: rxvt-unicode
 URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: google-chrome-stable
 URxvt.matcher.button: 1
 
 ! Molokai theme
