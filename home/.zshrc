@@ -67,3 +67,4 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 if which passpie > /dev/null; then eval "$(passpie complete zsh)"; fi
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+homeshick --quiet refresh
