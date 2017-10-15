@@ -1,0 +1,18 @@
+#+TITLE: Dotfiles Org File
+#+AUTHOR: Vladimir (sial) Todorov
+#+EMAIL: sial@macrew.eu
+
+This org file will contain notes and todo items for my precious dotfiles.
+
+* Notes
+
+* Todo
+  
+** TODO .msmtprc homeshick track
+
+** TODO .gitconfig homeshick track
+
+** TODO .weechat homeshick track
+
+** TODO .config/awesome homeshick track
+  
