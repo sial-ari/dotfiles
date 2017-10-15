@@ -1,0 +1,77 @@
+[general]
+ui = ttyui
+accounts = sial, xi, vizio
+pythonfile = /home/sial/.bin/offlineimap.py
+maxsyncaccounts = 4
+
+[Account sial]
+autorefresh = 20
+quick = 10
+localrepository = sial-local
+remoterepository = sial-remote
+
+[Repository sial-local]
+type = Maildir
+localfolders = ~/mail/sial
+
+[Repository sial-remote]
+type = Gmail
+remoteuser = sial@macrew.eu
+ssl = yes
+expunge = yes
+remotepasseval = get_pass_for('sial@macrew.eu')
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername not in ['INBOX.Trash']
+maxconnections = 3
+keepalive = 60
+holdconnectionopen = yes
+
+[Account xi]
+autorefresh = 20
+quick = 10
+localrepository = xi-local
+remoterepository = xi-remote
+
+[Repository xi-local]
+type = Maildir
+localfolders = ~/mail/xi
+
+[Repository xi-remote]
+type = IMAP
+remotehost = mail.xi-group.com
+remoteport = 993
+remoteuser = vtodorov@xi-group.com
+ssl = yes
+expunge = yes
+remotepasseval = get_pass_for('vtodorov@xi-group.com') 
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername not in ['INBOX.Trash']
+maxconnections = 3
+keepalive = 60
+holdconnectionopen = yes
+
+[Account vizio]
+autorefresh = 20
+quick = 10
+localrepository = vizio-local
+remoterepository = vizio-remote
+
+[Repository vizio-local]
+type = Maildir
+localfolders = ~/mail/vizio
+
+[Repository vizio-remote]
+type = IMAP
+remotehost = outlook.office365.com
+remoteport = 993
+remoteuser = vladimir.todorov@vizio.com
+ssl = yes
+expunge = yes
+remotepasseval = get_pass_for('vladimir.todorov@vizio.com') 
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername not in ['INBOX.Trash']
+maxconnections = 3
+keepalive = 60
+holdconnectionopen = yes
+
+# vim: ft=config
