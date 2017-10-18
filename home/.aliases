@@ -52,3 +52,8 @@ alias lock="xscreensaver-command --lock"
 
 alias ssh='~/.bin/ssh-ident'
 tssh (){ ssh -t "$1" 'tmux attach -t ``|| tmux new || screen -DR'; }
+
+send_mm(){
+    json=$(printf '{"recipient_token":"30a2f1e8-9bbf-4162-ac12-d94738116857","text": "%s","origin": "%s"}' "${1}" "${2}")
+    curl -H "Content-Type: application/json" -X POST -d "${json}" https://35.198.184.190/api/messages --insecure
+}
