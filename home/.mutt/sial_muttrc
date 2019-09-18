@@ -1,0 +1,22 @@
+set from = "sial@macrew.eu"
+set realname = "Vladimir (sial) Todorov"
+set use_from=yes
+set envelope_from=yes
+set sendmail="/usr/bin/msmtp -a sial"
+
+set mbox_type=Maildir
+set folder="~/mail/sial"
+mailboxes `echo -n "+ "; for file in ~/mail/sial/*; do box=$(basename "$file"); echo -n "\"+$box\" "; done`
+set spoolfile="~/mail/sial/INBOX"
+set postponed="+Drafts"
+
+source ~/.mutt/common_muttrc
+set mailcap_path = ~/.mutt/mailcap_sial
+
+set header_cache=~/.mutt/cache/sial/headers
+set message_cachedir=~/.mutt/cache/sial/bodies
+
+#lists schemaless@uber.com
+#subscribe schemaless@uber.com
+
+# vim: ft=muttrc

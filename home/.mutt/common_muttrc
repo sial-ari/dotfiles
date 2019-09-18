@@ -1,0 +1,114 @@
+# Change the following line to a different editor you prefer.
+set editor = "vim"
+set edit_headers = yes
+set certificate_file=~/.mutt/certificates
+set move = no
+set include
+set sort = "threads"
+set sort_aux = "last-date-received"
+set auto_tag = yes
+set mark_old = no
+set markers = no
+set display_filter="$HOME/.bin/mail_filter"
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop
+
+bind index \> next-unread
+bind index \< previous-unread
+
+bind index <space> collapse-thread
+bind index <esc><space> collapse-all
+
+bind index,pager gr group-reply
+bind index,pager \Cr imap-fetch-mail
+bind pager \C? previous-line
+bind index gu next-unread
+
+set pager_index_lines = 20
+
+bind index m set-flag
+bind index M clear-flag
+bind index gm mail
+bind index,pager gr group-reply
+macro index gy <set-flag>!
+
+bind generic <Home> top-page
+bind generic <End> bottom-page
+bind generic gg first-entry
+bind generic gG last-entry
+
+bind editor \t complete-query
+bind index G last-entry
+bind index gg first-entry
+
+macro index S "|bogofilter -s\ns=spam/\n" "Learn as spam and save to junk"
+macro pager S "|bogofilter -s\ns=spam/\n" "Learn as spam and save to junk"
+macro index H "|bogofilter -n\ns="        "Learn as ham and save"
+macro pager H "|bogofilter -n\ns="        "Learn as ham and save"
+
+macro index .i      "l((~N|~O|~F)!~D)|(~d<1w!~Q)\n"
+macro index .n      "l~N\n"
+macro index .o      "l(~N|~O)\n"
+macro index .a      "l~A\n"
+macro index .t      "l~d<1d\n"
+macro index .y      "l~d<2d ~d>1d\n"
+
+macro index \cb |urlview\n
+macro pager \cb |urlview\n
+
+
+set pager_index_lines=10
+
+set date_format="%y-%m-%d %H:%M"
+set index_format="%Z ⦗%[%d/%m/%y]⦘ %-20.20F %s"
+
+set status_chars  = " *%A"
+set status_format = "───❬Folder: %f❭───❬%m messages%?n? (✉ %n)?%?d? ❲✗ %d ❳?%?t? ❲%t tagged❳?❭───%>─%?p?❬ %p postponed ❭?───"
+
+set sidebar_delim   = '│'
+set sidebar_visible = no
+set sidebar_width   = 30
+set narrow_tree
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+color sidebar_new color221 color233
+
+# ctrl-o to open selected folder
+bind index,pager O sidebar-open
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
+
+source ~/.mutt/jellybeans_color
+source ~/.mutt/mailing_lists
+
+
+macro index <F8> \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<shell-escape>notmuch-mutt -r --prompt search<enter>\
+<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+      "notmuch: search mail"
+
+macro index <F9> \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<pipe-message>notmuch-mutt -r thread<enter>\
+<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+      "notmuch: reconstruct thread"
+
+macro index <F6> \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<pipe-message>notmuch-mutt tag -- -inbox<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+      "notmuch: remove message from inbox"
+
+macro index \cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# vim: ft=muttrc

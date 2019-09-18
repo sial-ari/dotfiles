@@ -1,0 +1,16 @@
+#text/html;      lynx -width=1024 -nomargins -nonumbers -dump %s; copiousoutput; nametemplate=%s.html
+#text/html; elinks -dump -dump-charset utf-8 -default-mime-type text/html %s; needsterminal; copiousoutput;
+# text/html; w3m %s; needsterminal; copiousoutput;
+text/html; w3m -I %{charset} -T text/html; needsterminal; copiousoutput;
+#text/html; elinks -dump -dump-charset iso-8859-15 -default-mime-type text/html %s; needsterminal; copiousoutput;
+#image/*;        anytopnm %s | pnmscale -xsize 80 -ysize 50 | ppmtopgm | pgmtopbm | pbmtoascii ; copiousoutput
+image/*;        show-img %s
+application/x-gunzip;   gzcat; copiousoutput
+application/x-tar-gz; gunzip -c %s | tar -tf - ; copiousoutput
+application/postscript; ps2ascii %s; copiousoutput
+application/msword; libreoffice %s
+application/pdf; evince %s
+application/vnd.openxm; libreoffice %s
+
+text/calendar; mutt-ical.py -i -e "evgeni@uber.com" %s
+application/ics; mutt-ical.py -i -e "evgeni@uber.com" %s
