@@ -1,4 +1,4 @@
-That's small part of my dotfiles, but i've been planning this for a long time ...
+DEPRECATED
 ---------------------------------------------------------------------------------
 
-I admit that I stole the Rakefile from skanev's dotfiles repo, but I have plans about more features.
+Reason: I've decided to start my dotfiles managent from scratch
